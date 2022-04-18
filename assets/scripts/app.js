@@ -1,25 +1,22 @@
 class Product {
-    title = "Hello Class";
+    title = "DEFAULT";
     imageUrl;
     description;
     price;
-}
 
+
+constructor(title, image, desc, price) {
+    this.title = title;
+    this.imageUrl = image;
+    this.description = desc;
+    this.price = price;
+    }
+}
 
 const productList = {
     products : [
-        {
-        title: 'Pillow',
-        imageUrl: 'depositphotos_10404781-stock-photo-bright-pillows-isolated-on-white.jpg',
-        price : 20,
-        description : 'Beutiful Pillow'
-        }, 
-        {
-        title: 'Carpet',
-        imageUrl: 'carpet.jpg',
-        price : 203,
-        description : 'Beutiful Carpet'
-        }
+        new Product('Pillow', 'images/depositphotos_10404781-stock-photo-bright-pillows-isolated-on-white.jpg', 'Beutiful Pillow',20 ),
+        new Product('Carpet', 'images/carpet.jpg', 'Beutiful carpet',202 )
     ],
 
     render(){
@@ -34,7 +31,7 @@ const productList = {
                     <img src="${prod.imageUrl}" alt="${prod.title}}">
                     <div class="prodcut-item__content">
                         <h2>${prod.title}</h2>
-                        <h3>/$${prod.price}</h3>
+                        <h3>$${prod.price}</h3>
                         <p>${prod.description}</p>
                         <button>Add to Cart</button>
                     </div>
